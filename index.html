@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIFTBOUND: Arena Clash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <div>
+          <h1>RIFTBOUND</h1>
+          <p>ARENA CLASH</p>
+        </div>
+      </div>
+
+      <div class="match-info">
+        <span class="live-dot"></span>
+        SOLO BATTLE
+      </div>
+
+      <button id="restartBtn" class="restart-btn">↻ Restart</button>
+    </header>
+
+    <main>
+      <section class="statusbar">
+        <div class="stat">
+          <span class="stat-label">YOUR CHAMPION</span>
+          <strong>NYX <span class="level">LV. 1</span></strong>
+          <div class="health-track">
+            <div id="playerHealth" class="health-fill"></div>
+          </div>
+          <small id="playerHealthText">100 / 100 HP</small>
+        </div>
+
+        <div class="score">
+          <span class="stat-label">ENEMY TAKEDOWNS</span>
+          <strong id="kills">0 <span>/ 3</span></strong>
+        </div>
+
+        <div class="stat enemy-stat">
+          <span class="stat-label">ENEMY FORCE</span>
+          <strong>THE HOLLOW</strong>
+          <small id="enemyCount">3 enemies remaining</small>
+        </div>
+      </section>
+
+      <section class="arena-wrap">
+        <div class="arena-heading">
+          <span>THE FORGOTTEN RIFT</span>
+          <span id="gameMessage">ELIMINATE ALL ENEMIES</span>
+        </div>
+
+        <div class="canvas-container">
+          <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+          <div id="startScreen" class="overlay">
+            <div class="overlay-card">
+              <span class="eyebrow">A NEW CHALLENGER APPROACHES</span>
+              <h2>ENTER THE <span>RIFT</span></h2>
+              <p>Three enemies. One arena. Can you survive?</p>
+              <button id="startBtn" class="primary-btn">ENTER BATTLE →</button>
+              <small>No downloads. No accounts. Just play.</small>
+            </div>
+          </div>
+
+          <div id="endScreen" class="overlay hidden">
+            <div class="overlay-card">
+              <span class="eyebrow">BATTLE COMPLETE</span>
+              <h2 id="endTitle">VICTORY</h2>
+              <p id="endText">The Rift belongs to you.</p>
+              <button id="playAgainBtn" class="primary-btn">PLAY AGAIN ↻</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-panel">
+        <div class="controls">
+          <span class="stat-label">MOVEMENT</span>
+          <div class="key-row">
+            <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+          </div>
+          <small>Move around the arena</small>
+        </div>
+
+        <div class="controls">
+          <span class="stat-label">BASIC ATTACK</span>
+          <div class="key-row">
+            <kbd class="wide-key">LEFT CLICK</kbd>
+          </div>
+          <small>Aim and fire at enemies</small>
+        </div>
+
+        <div class="controls">
+          <span class="stat-label">ARCANE BURST</span>
+          <div class="key-row">
+            <kbd class="ability-key">Q</kbd>
+            <span id="abilityStatus" class="cooldown">READY</span>
+          </div>
+          <small>Damage nearby enemies</small>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>RIFTBOUND © 2026</span>
+      <span>FAN-INSPIRED ORIGINAL GAME · BUILT WITH JAVASCRIPT</span>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
